@@ -39,6 +39,6 @@ class CreateAssessmentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('workouts');
+        Schema::dropIfExists('assessment');
     }
 }
