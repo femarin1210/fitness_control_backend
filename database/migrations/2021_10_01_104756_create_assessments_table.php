@@ -20,7 +20,7 @@ class CreateAssessmentsTable extends Migration
             $table->date('date');
             $table->integer('height');
             $table->integer('weight');
-            $table->double('fat_percentage');
+            $table->double('fatPercentage');
             $table->integer('chest');
             $table->integer('biceps');
             $table->integer('waist');
@@ -28,7 +28,7 @@ class CreateAssessmentsTable extends Migration
             $table->integer('thigh');
             $table->integer('calf');
             $table->string('active',1);
-            $table->bigInteger('id_user');
+            $table->bigInteger('idUser');
             $table->timestamps();
         });
     }
