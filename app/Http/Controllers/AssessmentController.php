@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Assessment as Assessment;
+use App\Http\Resources\Assessment as AssessmentResource;
 
 use Illuminate\Http\Request;
 
