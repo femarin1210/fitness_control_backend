@@ -6,7 +6,7 @@ use App\Models\Assessment as Assessment;
 
 use Illuminate\Http\Request;
 
-class AssessmentsController extends Controller
+class AssessmentController extends Controller
 {
     //
 
@@ -33,10 +33,10 @@ class AssessmentsController extends Controller
         $assessment->calf = $request->input('calf');
         $assessment->active = $request->input('active');
         */
-        
+
         $assessment->title = 'title';
-        $assessment->title = 'A';
-        $assessment->date = 'date';
+        $assessment->type = 'A';
+        $assessment->date = null;
         $assessment->height = 100;
         $assessment->weight = 100;
         $assessment->fat_percentage = 100;
@@ -49,7 +49,7 @@ class AssessmentsController extends Controller
         $assessment->active = "S";
 
         if( $assessment->save()){
-            //return new UserResource( $assessment );
+            return new Assessment( $assessment );
             //return "ok";
         }
     }
