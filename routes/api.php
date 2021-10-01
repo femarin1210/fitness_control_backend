@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AssessmentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,4 +32,4 @@ Route::post('logout', [AuthController::class, 'logout']);
 Route::post('refresh', [AuthController::class, 'refresh']);
 Route::post('me', [AuthController::class, 'me']);
 
-Route::post('assessment', [AuthController::class, 'assessment']);
+Route::post('assessment', [AssessmentsController::class, 'assessment']);
