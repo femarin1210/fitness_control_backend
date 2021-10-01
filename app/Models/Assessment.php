@@ -9,6 +9,6 @@ class Assessment extends Model
 {
     use HasFactory;
 
-    protected $fillable =  ['title','date','height','weight','fat_percentage','chest','biceps','waist','hip','thigh','calf','active'];
+    protected $fillable =  ['title','date','height','weight','fatPercentage','chest','biceps','waist','hip','thigh','calf','active'];
 
 }

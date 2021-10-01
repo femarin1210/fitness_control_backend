@@ -33,7 +33,7 @@ class AssessmentController extends Controller
         $assessment->thigh = $request->input('thigh');
         $assessment->calf = $request->input('calf');
         $assessment->active = $request->input('active');
-        $assessment->userId = $request->input('userId');
+        $assessment->idUser = $request->input('idUser');
 
         /*
         $assessment->title = 'title';
