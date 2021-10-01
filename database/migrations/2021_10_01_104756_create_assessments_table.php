@@ -13,7 +13,7 @@ class CreateAssessmentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('assessment', function (Blueprint $table) {
+        Schema::create('assessments', function (Blueprint $table) {
             $table->id();
             $table->string('type',1);
             $table->string('title');
