@@ -17,8 +17,20 @@ class Assessment extends JsonResource
         //return parent::toArray($request);
         return [
             'id' => $this->id,
+            'type' => $this->type,
             'title' => $this->title,
-            'date' => $this->date
+            'date' => $this->date,
+            'height' => $this->height,
+            'weight' => $this->weight,
+            'fatPercentage' => $this->fatPercentage,
+            'chest' => $this->chest,
+            'biceps' => $this->biceps,
+            'waist' => $this->waist,
+            'hip' => $this->hip,
+            'thigh' => $this->thigh,
+            'calf' => $this->calf,
+            'active' => $this->active,
+            'idUser' => $this->idUser
         ];
     
     }
