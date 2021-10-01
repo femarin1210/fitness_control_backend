@@ -17,7 +17,7 @@ class CreateAssessmentsTable extends Migration
             $table->id();
             $table->string('type',1);
             $table->string('title');
-            $table->date('date');
+            $table->timestamps('date');
             $table->integer('height');
             $table->integer('weight');
             $table->double('fatPercentage');
