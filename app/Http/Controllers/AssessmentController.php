@@ -19,12 +19,13 @@ class AssessmentController extends Controller
     public function store(Request $request)
     {
         $assessment = new Assessment;
-        /*
+        
         $assessment->title = $request->input('title');
+        $assessment->type = $request->input('type');
         $assessment->date = $request->input('date');
         $assessment->height = $request->input('height');
         $assessment->weight = $request->input('weight');
-        $assessment->fat_percentage = $request->input('fat_percentage');
+        $assessment->fatPercentage = $request->input('fatPercentage');
         $assessment->chest = $request->input('chest');
         $assessment->biceps = $request->input('biceps');
         $assessment->waist = $request->input('waist');
@@ -32,8 +33,9 @@ class AssessmentController extends Controller
         $assessment->thigh = $request->input('thigh');
         $assessment->calf = $request->input('calf');
         $assessment->active = $request->input('active');
-        */
+        $assessment->userId = $request->input('userId');
 
+        /*
         $assessment->title = 'title';
         $assessment->type = 'A';
         $assessment->date = null;
@@ -47,6 +49,7 @@ class AssessmentController extends Controller
         $assessment->thigh = 100;
         $assessment->calf = 100;
         $assessment->active = "S";
+        */
 
         if( $assessment->save()){
             return new Assessment( $assessment );
