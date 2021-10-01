@@ -12,6 +12,17 @@ class AssessmentController extends Controller
     //
 
     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $assessment = Assessment::paginate(15);
+        return AssessmentResource::collection($assessment);
+    }
+    
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
