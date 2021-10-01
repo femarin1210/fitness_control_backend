@@ -32,5 +32,5 @@ Route::post('logout', [AuthController::class, 'logout']);
 Route::post('refresh', [AuthController::class, 'refresh']);
 Route::post('me', [AuthController::class, 'me']);
 
-Route::get('assessment', [AssessmentController::class, 'index']);
-Route::post('assessments', [AssessmentController::class, 'store']);
+Route::get('assessments', [AssessmentController::class, 'index']);
+Route::post('assessment', [AssessmentController::class, 'store']);
