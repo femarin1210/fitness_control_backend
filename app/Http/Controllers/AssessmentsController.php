@@ -19,6 +19,7 @@ class AssessmentsController extends Controller
     public function store(Request $request)
     {
         $assessment = new Assessment;
+        /*
         $assessment->title = $request->input('title');
         $assessment->date = $request->input('date');
         $assessment->height = $request->input('height');
@@ -31,7 +32,21 @@ class AssessmentsController extends Controller
         $assessment->thigh = $request->input('thigh');
         $assessment->calf = $request->input('calf');
         $assessment->active = $request->input('active');
+        */
         
+        $assessment->title = 'title';
+        $assessment->title = 'A';
+        $assessment->date = 'date';
+        $assessment->height = 100;
+        $assessment->weight = 100;
+        $assessment->fat_percentage = 100;
+        $assessment->chest = 100;
+        $assessment->biceps = 100;
+        $assessment->waist = 100;
+        $assessment->hip = 100;
+        $assessment->thigh = 100;
+        $assessment->calf = 100;
+        $assessment->active = "S";
 
         if( $assessment->save()){
             //return new UserResource( $assessment );
