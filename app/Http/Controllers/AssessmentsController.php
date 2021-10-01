@@ -27,10 +27,10 @@ class AssessmentsController extends Controller
         $assessment->active = $request->input('active');
         
 
-        if( $assessment->save()){
+        //if( $assessment->save()){
             //return new UserResource( $assessment );
-            return "ok";
-        }
+        //    return "ok";
+        //}
     }
 
 }
