@@ -52,7 +52,8 @@ class AssessmentController extends Controller
         */
 
         if( $assessment->save()){
-            return new Assessment( $assessment );
+            //return new Assessment( $assessment );
+            return new AssessmentResource( $assessment );
             //return "ok";
         }
     }
