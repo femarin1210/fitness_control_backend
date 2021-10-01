@@ -33,4 +33,4 @@ Route::post('refresh', [AuthController::class, 'refresh']);
 Route::post('me', [AuthController::class, 'me']);
 
 Route::get('assessment', [AssessmentController::class, 'index']);
-Route::post('assessment', [AssessmentController::class, 'store']);
+Route::post('assessments', [AssessmentController::class, 'store']);
