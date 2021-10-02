@@ -79,7 +79,7 @@ class AssessmentController extends Controller
     public function show($id)
     {
         $assessment = Assessment::findOrFail( $id );
-        return new AssessmentResource($user);
+        return new AssessmentResource($assessment);
     }
 
 }
