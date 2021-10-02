@@ -70,4 +70,16 @@ class AssessmentController extends Controller
         }
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $assessment = Assessment::findOrFail( $id );
+        return new AssessmentResource($user);
+    }
+
 }
