@@ -85,18 +85,8 @@ class AssessmentController extends Controller
     public function destroy($id){
 
         $res = Assessment::find($id)->delete();
-        if ($res){
-          $data=[
-          'status'=>'1',
-          'msg'=>'success'
-          ];
-        }else{
-          $data=[
-          'status'=>'0',
-          'msg'=>'fail'
-          ];
-        }
-        return response()->json($data);
+        
+        return $res;
 
     }
 
