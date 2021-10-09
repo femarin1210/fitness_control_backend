@@ -72,11 +72,11 @@ class AssessmentController extends Controller
 
     public function update(Request $request, $id)
     {
-        $user = Assessment::findOrFail($id);
-        //$user->name = $request->input('name');
+        $assessment = Assessment::findOrFail($id);
+        $assessment->title = $request->input('title');
         //$user->password = $request->input('password');
 
-        if( $user->save()){
+        if( $assessment->save()){
             return true;
         }
 
