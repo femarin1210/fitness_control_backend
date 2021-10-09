@@ -86,7 +86,6 @@ class AssessmentController extends Controller
         $assessment->thigh = $request->input('thigh');
         $assessment->calf = $request->input('calf');
         $assessment->active = $request->input('active');
-        $assessment->idUser = $request->input('idUser');
 
         if( $assessment->save()){
             return true;
