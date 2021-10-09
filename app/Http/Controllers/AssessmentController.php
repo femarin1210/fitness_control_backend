@@ -18,6 +18,11 @@ class AssessmentController extends Controller
      */
     public function index()
     {
+
+        if ($request->has('idUser')) {
+            $query->where('idUser', '=', $request->idUser );
+        }
+
         $assessment = Assessment::paginate(15);
         return AssessmentResource::collection($assessment);
     }
@@ -46,22 +51,6 @@ class AssessmentController extends Controller
         $assessment->calf = $request->input('calf');
         $assessment->active = $request->input('active');
         $assessment->idUser = $request->input('idUser');
-
-        /*
-        $assessment->title = 'title';
-        $assessment->type = 'A';
-        $assessment->date = null;
-        $assessment->height = 100;
-        $assessment->weight = 100;
-        $assessment->fat_percentage = 100;
-        $assessment->chest = 100;
-        $assessment->biceps = 100;
-        $assessment->waist = 100;
-        $assessment->hip = 100;
-        $assessment->thigh = 100;
-        $assessment->calf = 100;
-        $assessment->active = "S";
-        */
 
         if( $assessment->save()){
             //return new Assessment( $assessment );
