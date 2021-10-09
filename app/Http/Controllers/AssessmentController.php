@@ -74,7 +74,19 @@ class AssessmentController extends Controller
     {
         $assessment = Assessment::findOrFail($id);
         $assessment->title = $request->input('title');
-        //$user->password = $request->input('password');
+        $assessment->type = $request->input('type');
+        $assessment->date = $request->input('date');
+        $assessment->height = $request->input('height');
+        $assessment->weight = $request->input('weight');
+        $assessment->fatPercentage = $request->input('fatPercentage');
+        $assessment->chest = $request->input('chest');
+        $assessment->biceps = $request->input('biceps');
+        $assessment->waist = $request->input('waist');
+        $assessment->hip = $request->input('hip');
+        $assessment->thigh = $request->input('thigh');
+        $assessment->calf = $request->input('calf');
+        $assessment->active = $request->input('active');
+        $assessment->idUser = $request->input('idUser');
 
         if( $assessment->save()){
             return true;
