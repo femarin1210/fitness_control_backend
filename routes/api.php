@@ -34,5 +34,6 @@ Route::post('me', [AuthController::class, 'me']);
 
 Route::get('assessments', [AssessmentController::class, 'index']);
 Route::post('assessment', [AssessmentController::class, 'store']);
+Route::post('assessment/{id}', [AssessmentController::class, 'update']);
 Route::get('assessment/{id}', [AssessmentController::class, 'show']);
 Route::delete('assessment/{id}', [AssessmentController::class, 'destroy']);
