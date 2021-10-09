@@ -32,7 +32,7 @@ Route::post('logout', [AuthController::class, 'logout']);
 Route::post('refresh', [AuthController::class, 'refresh']);
 Route::post('me', [AuthController::class, 'me']);
 
-Route::get('assessments', [AssessmentController::class, 'index']);
+Route::get('assessments/{idUser}', [AssessmentController::class, 'index']);
 Route::post('assessment', [AssessmentController::class, 'store']);
 Route::post('assessment/{id}', [AssessmentController::class, 'update']);
 Route::get('assessment/{id}', [AssessmentController::class, 'show']);

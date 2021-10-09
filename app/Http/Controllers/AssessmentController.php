@@ -16,14 +16,12 @@ class AssessmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($idUser)
     {
 
-        if ($request->has('idUser')) {
-            $query->where('idUser', '=', $request->idUser );
-        }
+        $assessment = Assessment::where('idUser', '=', $idUser)->paginate(15);
+        $assessment = Assessment::paginate();
 
-        $assessment = Assessment::paginate(15);
         return AssessmentResource::collection($assessment);
     }
     
