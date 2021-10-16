@@ -16,11 +16,11 @@ class CreateWorkoutsTable extends Migration
         Schema::create('workouts', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->date('date_start');
-            $table->date('date_final');
-            $table->bigInteger('id_user');
+            $table->date('dateStart');
+            $table->date('dateFinal');
+            $table->bigInteger('idUser');
             $table->char('status', 1);
-            $table->integer('qty_workouts_week');
+            $table->integer('qtyWorkoutsWeek');
             $table->timestamps();
         });
     }

@@ -20,7 +20,8 @@ class AssessmentController extends Controller
     {
 
         $assessment = Assessment::where('idUser', '=', $idUser)->paginate(15);
-        //$assessment = Assessment::paginate();
+        //
+        $assessment = Assessment::paginate();
 
         return AssessmentResource::collection($assessment);
     }

@@ -37,3 +37,9 @@ Route::post('assessment', [AssessmentController::class, 'store']);
 Route::post('assessment/{id}', [AssessmentController::class, 'update']);
 Route::get('assessment/{id}', [AssessmentController::class, 'show']);
 Route::delete('assessment/{id}', [AssessmentController::class, 'destroy']);
+
+Route::get('workouts/{idUser}', [WorkoutController::class, 'index']);
+Route::post('workout', [WorkoutController::class, 'store']);
+Route::post('workout/{id}', [WorkoutController::class, 'update']);
+Route::get('workout/{id}', [WorkoutController::class, 'show']);
+Route::delete('workout/{id}', [WorkoutController::class, 'destroy']);
