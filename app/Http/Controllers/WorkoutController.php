@@ -20,8 +20,6 @@ class WorkoutController extends Controller
     {
 
         $workout = Workout::where('idUser', '=', $idUser)->paginate(15);
-        //
-        $workout = Workout::paginate();
 
         return WorkoutResource::collection($workout);
     }
