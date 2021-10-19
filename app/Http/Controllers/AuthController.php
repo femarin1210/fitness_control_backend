@@ -14,7 +14,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login','assessment','workout']]);
+        $this->middleware('auth:api', ['except' => ['login','assessment','workout','workoutsequence']]);
         $this->guard = "api";
     }
 
