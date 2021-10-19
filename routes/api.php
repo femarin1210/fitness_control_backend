@@ -45,8 +45,8 @@ Route::post('workout/{id}', [WorkoutController::class, 'update']);
 Route::get('workout/{id}', [WorkoutController::class, 'show']);
 Route::delete('workout/{id}', [WorkoutController::class, 'destroy']);
 
-Route::get('workoutsequences/{idUser}', [WorkoutController::class, 'index']);
-Route::post('workoutsequence', [WorkoutController::class, 'store']);
-Route::post('workoutsequence/{id}', [WorkoutController::class, 'update']);
-Route::get('workoutsequence/{id}', [WorkoutController::class, 'show']);
-Route::delete('workoutsequence/{id}', [WorkoutController::class, 'destroy']);
+Route::get('workoutsequences/{idUser}', [WorkoutSequenceController::class, 'index']);
+Route::post('workoutsequence', [WorkoutSequenceController::class, 'store']);
+Route::post('workoutsequence/{id}', [WorkoutSequenceController::class, 'update']);
+Route::get('workoutsequence/{id}', [WorkoutSequenceController::class, 'show']);
+Route::delete('workoutsequence/{id}', [WorkoutSequenceController::class, 'destroy']);
