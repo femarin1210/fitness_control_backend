@@ -16,6 +16,7 @@ class CreateWorkoutSequencesTable extends Migration
         Schema::create('workout_sequences', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('workout');
             $table->integer('sequence');
             $table->char('status', 1);
             $table->integer('idWorkout');
