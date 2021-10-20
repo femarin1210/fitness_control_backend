@@ -18,6 +18,7 @@ class WorkoutSequence extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this->title,
+            'workout' => $this->workout,
             'sequence' => $this->sequence,
             'status' => $this->status,
             'idWorkout' => $this->idWorkout,
