@@ -16,10 +16,10 @@ class WorkoutSequenceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($idUser)
+    public function index($idWorkout)
     {
 
-        $workoutsequence = WorkoutSequence::where('idUser', '=', $idUser)->paginate(15);
+        $workoutsequence = WorkoutSequence::where('idWorkout', '=', $idWorkout)->paginate(15);
         
         //$workoutsequence = WorkoutSequence::paginate();
 
