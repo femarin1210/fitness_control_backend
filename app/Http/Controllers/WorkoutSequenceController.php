@@ -37,6 +37,7 @@ class WorkoutSequenceController extends Controller
         $workoutsequence = new WorkoutSequence; 
         
         $workoutsequence->title = $request->input('title');
+        $workoutsequence->workout = $request->input('workout');
         $workoutsequence->sequence = $request->input('sequence');
         $workoutsequence->status = $request->input('status');
         $workoutsequence->idWorkout = $request->input('idWorkout');
@@ -54,6 +55,7 @@ class WorkoutSequenceController extends Controller
         $workoutsequence = WorkoutSequence::findOrFail($id);
         
         $workoutsequence->title = $request->input('title');
+        $workoutsequence->workout = $request->input('workout');
         $workoutsequence->sequence = $request->input('sequence');
         $workoutsequence->status = $request->input('status');
         $workoutsequence->idWorkout = $request->input('idWorkout');
