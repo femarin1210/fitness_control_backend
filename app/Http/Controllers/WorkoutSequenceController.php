@@ -26,6 +26,13 @@ class WorkoutSequenceController extends Controller
         return WorkoutSequenceResource::collection($workoutsequence);
     }
     
+    public function getNextSequence($idWorkout)
+    {
+
+        return int $workoutsequencemax = WorkoutSequence::where('idWorkout', '=', $idWorkout)->max('id');
+        
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -38,10 +45,13 @@ class WorkoutSequenceController extends Controller
         
         $workoutsequence->title = $request->input('title');
         $workoutsequence->workout = $request->input('workout');
-        $workoutsequence->sequence = $request->input('sequence');
         $workoutsequence->status = $request->input('status');
         $workoutsequence->idWorkout = $request->input('idWorkout');
         $workoutsequence->idUser = $request->input('idUser');
+
+        index($workoutsequence->idWorkout);
+
+        $workoutsequence->sequence = ($workoutsequencemax + 1);
 
         if( $workoutsequence->save()){
             //return new WorkoutSequence( $workoutsequence );
