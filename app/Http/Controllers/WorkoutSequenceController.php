@@ -29,8 +29,9 @@ class WorkoutSequenceController extends Controller
     public function getNextSequence($idWorkout)
     {
 
-        return int $workoutsequencemax = WorkoutSequence::where('idWorkout', '=', $idWorkout)->max('id');
-        
+        int $workoutsequencemax = WorkoutSequence::where('idWorkout', '=', $idWorkout)->max('id');
+        return $workoutsequencemax;
+
     }
 
     /**
