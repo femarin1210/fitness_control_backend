@@ -30,8 +30,11 @@ class WorkoutSequenceController extends Controller
     {
 
         $workoutsequencemaxmodel = WorkoutSequence::where('idWorkout', '=', $idWorkout)->max('sequence');
-        $workoutsequencemax = ($workoutsequencemaxmodel->sequence + 1);
-        return $workoutsequencemax;
+
+        return new WorkoutSequenceResource( $workoutsequencemaxmodel );
+
+        //$workoutsequencemax = ($workoutsequencemaxmodel->sequence + 1);
+        //return $workoutsequencemax;
 
     }
 
@@ -53,10 +56,13 @@ class WorkoutSequenceController extends Controller
         $workoutsequence->idWorkout = $request->input('idWorkout');
         $workoutsequence->idUser = $request->input('idUser');
 
+        $workoutsequencemax = new WorkoutSequenceResource;
+        $workoutsequencemax = getNextSequence($workoutsequence->idWorkout);
+
 //        getNextSequence($workoutsequence->idWorkout);
 
-//        $workoutsequence->sequence = ($workoutsequencemax->sequence + 1);
-        $workoutsequence->sequence = (getNextSequence($workoutsequence->idWorkout) + 1);
+        $workoutsequence->sequence = ($workoutsequencemax->sequence + 1);
+//        $workoutsequence->sequence = (getNextSequence($workoutsequence->idWorkout) + 1);
 
         if( $workoutsequence->save()){
             //return new WorkoutSequence( $workoutsequence );
@@ -76,9 +82,10 @@ class WorkoutSequenceController extends Controller
         $workoutsequence->idWorkout = $request->input('idWorkout');
         $workoutsequence->idUser = $request->input('idUser');
 
-
         if( $workoutsequence->save()){
             return true;
+        }else{
+            return false;
         }
 
     }
