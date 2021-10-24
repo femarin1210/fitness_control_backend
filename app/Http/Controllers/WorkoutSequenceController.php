@@ -44,6 +44,7 @@ class WorkoutSequenceController extends Controller
     public function store(Request $request)
     {
         $workoutsequence = new WorkoutSequence; 
+        $workoutsequencemax = new WorkoutSequence;
         
         $workoutsequence->title = $request->input('title');
         $workoutsequence->workout = $request->input('workout');
@@ -53,7 +54,7 @@ class WorkoutSequenceController extends Controller
         $workoutsequence->idUser = $request->input('idUser');
 
 //        $workoutsequencemax = new WorkoutSequenceResource;
-        getNextSequence($workoutsequence->idWorkout);
+        $workoutsequencemax->getNextSequence($workoutsequence->idWorkout);
 
 //        getNextSequence($workoutsequence->idWorkout);
 
