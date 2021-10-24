@@ -59,7 +59,9 @@ class WorkoutSequenceController extends Controller
 
 //        getNextSequence($workoutsequence->idWorkout);
 
+
         $workoutsequence->sequence = (($workoutsequencemaxmodel->sequence) + 1);
+
 
 //        $workoutsequence->sequence = (getNextSequence($workoutsequence->idWorkout) + 1);
 
