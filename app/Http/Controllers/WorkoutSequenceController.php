@@ -53,7 +53,7 @@ class WorkoutSequenceController extends Controller
         $workoutsequence->idUser = $request->input('idUser');
 
 //        $workoutsequencemax = new WorkoutSequenceResource;
-        getNextSequence($workoutsequence->idWorkout);
+        $workoutsequencemax->getNextSequence($workoutsequence->idWorkout);
 
 //        getNextSequence($workoutsequence->idWorkout);
 
