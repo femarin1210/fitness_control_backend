@@ -30,8 +30,7 @@ class WorkoutSequenceController extends Controller
     {
 
         $workoutsequencemaxmodel = WorkoutSequence::where('idWorkout', '=', $idWorkout)->max('sequence');
-        //$workoutsequencemaxmodel->sequence;
-        //return new WorkoutSequenceResource( $workoutsequencemaxmodel );
+        return new WorkoutSequenceResource( $workoutsequencemaxmodel );
 
     }
 
@@ -45,7 +44,7 @@ class WorkoutSequenceController extends Controller
     public function store(Request $request)
     {
         $workoutsequence = new WorkoutSequence; 
-        //$workoutsequencemax = new WorkoutSequence;
+        $workoutsequencemax = new WorkoutSequence;
         
         $workoutsequence->title = $request->input('title');
         $workoutsequence->workout = $request->input('workout');
@@ -58,8 +57,10 @@ class WorkoutSequenceController extends Controller
         $workoutsequencemax = $this->getNextSequence($workoutsequence->idWorkout);
 
 //        getNextSequence($workoutsequence->idWorkout);
+        
+        $newsequence = $workoutsequencemax->sequence;
 
-        $workoutsequence->sequence = (($workoutsequencemaxmodel->sequence) + 1);
+//        $workoutsequence->sequence = (($workoutsequencemax->sequence) + 1);
 
 //        $workoutsequence->sequence = (getNextSequence($workoutsequence->idWorkout) + 1);
 
