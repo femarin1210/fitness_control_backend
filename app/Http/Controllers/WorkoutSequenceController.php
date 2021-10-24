@@ -49,19 +49,20 @@ class WorkoutSequenceController extends Controller
         $workoutsequence->title = $request->input('title');
         $workoutsequence->workout = $request->input('workout');
         $workoutsequence->status = $request->input('status');
-        $workoutsequence->sequence = $request->input('sequence');
         $workoutsequence->idWorkout = $request->input('idWorkout');
         $workoutsequence->idUser = $request->input('idUser');
 
 //        $workoutsequencemax = new WorkoutSequenceResource;
         $workoutsequencemax = $this->getNextSequence($workoutsequence->idWorkout);
 
+        $workoutsequence->sequence = ($workoutsequencemax + 1);
+
         //$array = $workoutsequencemax->toArray();
         //$new_sequence = puck('sequence');
 
 //        getNextSequence($workoutsequence->idWorkout);
         
-        $newsequence = ($workoutsequencemax + 1);
+        //$newsequence = ($workoutsequencemax + 1);
 
 
 //        $workoutsequence->sequence = (($workoutsequencemax->sequence) + 1);
