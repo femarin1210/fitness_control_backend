@@ -18,8 +18,8 @@ class CreateAssessmentsTable extends Migration
             $table->string('type',1);
             $table->string('title');
             $table->string('date');
-            $table->integer('height');
-            $table->integer('weight');
+            $table->double('height');
+            $table->double('weight');
             $table->double('fatPercentage');
             $table->integer('chest');
             $table->integer('biceps');

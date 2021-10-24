@@ -19,8 +19,8 @@ class CreateWorkoutSequencesTable extends Migration
             $table->string('workout');
             $table->integer('sequence');
             $table->char('status', 1);
-            $table->integer('idWorkout');
-            $table->integer('idUser');
+            $table->bigInteger('idWorkout');
+            $table->bigInteger('idUser');
             $table->timestamps();
         });
     }
