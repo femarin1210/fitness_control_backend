@@ -58,7 +58,7 @@ class WorkoutSequenceController extends Controller
 
         //$workoutsequencemax = new WorkoutSequenceResource;
        // $workoutsequencemax = new WorkoutSequenceResource;
-        $workoutsequencemax = getNextSequence(5);
+        $workoutsequencemax->getNextSequence(5);
 
 //       $workoutsequence->sequence = ($workoutsequencemax->sequence + 1);
 //        $workoutsequence->sequence = (getNextSequence($workoutsequence->idWorkout) + 1);
