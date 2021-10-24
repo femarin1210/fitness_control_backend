@@ -58,7 +58,7 @@ class WorkoutSequenceController extends Controller
 
 //        getNextSequence($workoutsequence->idWorkout);
         
-        $newsequence = $workoutsequencemax->sequence;
+        //$newsequence = $workoutsequencemax->sequence;
 
 
 //        $workoutsequence->sequence = (($workoutsequencemax->sequence) + 1);
