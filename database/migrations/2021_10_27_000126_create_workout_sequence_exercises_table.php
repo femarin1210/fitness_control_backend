@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class WorkoutSequenceExercises extends Migration
+class CreateWorkoutSequenceExercisesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -18,7 +18,6 @@ class WorkoutSequenceExercises extends Migration
             $table->string('title');
             $table->integer('sequence');
             $table->integer('qtySeries');
-            $table->integer('sequence');
             $table->integer('qtyRepetitions');
             $table->integer('qtyWeight');
             $table->bigInteger('idWorkoutSequence');
