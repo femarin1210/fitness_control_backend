@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\WorkoutSequenceExercises as WorkoutSequenceExercises;
-use App\Http\Resources\WorkoutSequenceExercises as WorkoutSequenceExercisesResource;
+use App\Models\WorkoutSequenceExercise as WorkoutSequenceExercise;
+use App\Http\Resources\WorkoutSequenceExercise as WorkoutSequenceExerciseResource;
 
 use Illuminate\Http\Request;
 
-class WorkoutSequenceExercisesController extends Controller
+class WorkoutSequenceExerciseController extends Controller
 {
     //
 
@@ -19,16 +19,16 @@ class WorkoutSequenceExercisesController extends Controller
     public function index($idWorkoutSequence)
     {
 
-        $workoutsequenceexercises = WorkoutSequenceExercises::where('idWorkoutSequence', '=', $idWorkoutSequence)->get();    
-        return WorkoutSequenceExercisesResource::collection($workoutsequenceexercises);
+        $workoutsequenceexercise = WorkoutSequenceExercise::where('idWorkoutSequence', '=', $idWorkoutSequence)->get();    
+        return WorkoutSequenceExerciseResource::collection($workoutsequenceexercise);
 
     }
     
     public function getNextSequence($idWorkoutSequence)
     {
 
-        $workoutsequenceexercisesmaxmodel = WorkoutSequenceExercises::where('idWorkoutSequence', '=', $idWorkoutSequence)->max('sequence');
-        return $workoutsequenceexercisesmaxmodel;
+        $workoutsequenceexercisemaxmodel = WorkoutSequenceExercise::where('idWorkoutSequence', '=', $idWorkoutSequence)->max('sequence');
+        return $workoutsequenceexercisemaxmodel;
 
     }
 
@@ -41,39 +41,39 @@ class WorkoutSequenceExercisesController extends Controller
      */
     public function store(Request $request)
     {
-        $workoutsequenceexercises = new WorkoutSequenceExercises; 
+        $workoutsequenceexercise = new WorkoutSequenceExercise; 
         
-        $workoutsequenceexercises->title = $request->input('title');
-        $workoutsequenceexercises->qtySeries = $request->input('qtySeries');
-        $workoutsequenceexercises->qtyRepetitions = $request->input('qtyRepetitions');
-        $workoutsequenceexercises->qtyWeight = $request->input('qtyWeight');
-        $workoutsequenceexercises->qtyInterval = $request->input('qtyInterval');
-        $workoutsequenceexercises->idWorkoutSequence = $request->input('idWorkoutSequence');
-        $workoutsequenceexercises->idUser = $request->input('idUser');
+        $workoutsequenceexercise->title = $request->input('title');
+        $workoutsequenceexercise->qtySeries = $request->input('qtySeries');
+        $workoutsequenceexercise->qtyRepetitions = $request->input('qtyRepetitions');
+        $workoutsequenceexercise->qtyWeight = $request->input('qtyWeight');
+        $workoutsequenceexercise->qtyInterval = $request->input('qtyInterval');
+        $workoutsequenceexercise->idWorkoutSequence = $request->input('idWorkoutSequence');
+        $workoutsequenceexercise->idUser = $request->input('idUser');
 
-        $workoutsequenceexercisesmax = $this->getNextSequence($workoutsequenceexercises->idWorkoutSequence);
+        $workoutsequenceexercisemax = $this->getNextSequence($workoutsequenceexercise->idWorkoutSequence);
 
-        $workoutsequenceexercises->sequence = ($workoutsequenceexercisesmax + 1);
+        $workoutsequenceexercise->sequence = ($workoutsequenceexercisemax + 1);
 
-        if( $workoutsequenceexercises->save()){
-            return new WorkoutSequenceExercisesResource( $workoutsequenceexercises );
+        if( $workoutsequenceexercise->save()){
+            return new WorkoutSequenceExerciseResource( $workoutsequenceexercise );
         }
         
     }
 
     public function update(Request $request, $id)
     {
-        $workoutsequenceexercises = WorkoutSequenceExercises::findOrFail($id);
+        $workoutsequenceexercise = WorkoutSequenceExercise::findOrFail($id);
         
-        $workoutsequenceexercises->title = $request->input('title');
-        $workoutsequenceexercises->qtySeries = $request->input('qtySeries');
-        $workoutsequenceexercises->qtyRepetitions = $request->input('qtyRepetitions');
-        $workoutsequenceexercises->qtyWeight = $request->input('qtyWeight');
-        $workoutsequenceexercises->qtyInterval = $request->input('qtyInterval');
-        $workoutsequenceexercises->idWorkoutSequence = $request->input('idWorkoutSequence');
-        $workoutsequenceexercises->idUser = $request->input('idUser');
+        $workoutsequenceexercise->title = $request->input('title');
+        $workoutsequenceexercise->qtySeries = $request->input('qtySeries');
+        $workoutsequenceexercise->qtyRepetitions = $request->input('qtyRepetitions');
+        $workoutsequenceexercise->qtyWeight = $request->input('qtyWeight');
+        $workoutsequenceexercise->qtyInterval = $request->input('qtyInterval');
+        $workoutsequenceexercise->idWorkoutSequence = $request->input('idWorkoutSequence');
+        $workoutsequenceexercise->idUser = $request->input('idUser');
 
-        if( $workoutsequenceexercises->save()){
+        if( $workoutsequenceexercise->save()){
             return true;
         }else{
             return false;
@@ -89,13 +89,13 @@ class WorkoutSequenceExercisesController extends Controller
      */
     public function show($id)
     {
-        $workoutsequenceexercises = WorkoutSequenceExercises::findOrFail( $id );
-        return new WorkoutSequenceExercisesResource($workoutsequenceexercises);
+        $workoutsequenceexercise = WorkoutSequenceExercise::findOrFail( $id );
+        return new WorkoutSequenceExerciseResource($workoutsequenceexercise);
     }
 
     public function destroy($id){
 
-        $res = WorkoutSequenceExercises::find($id)->delete();
+        $res = WorkoutSequenceExercise::find($id)->delete();
         
         return $res;
 
