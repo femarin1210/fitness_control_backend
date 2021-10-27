@@ -8,7 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AssessmentController;
 use App\Http\Controllers\WorkoutController;
 use App\Http\Controllers\WorkoutSequenceController;
-use App\Http\Controllers\WorkoutSequenceExercisesController;
+use App\Http\Controllers\WorkoutSequenceExerciseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,8 +54,8 @@ Route::post('workoutsequence/{id}', [WorkoutSequenceController::class, 'update']
 Route::get('workoutsequence/{id}', [WorkoutSequenceController::class, 'show']);
 Route::delete('workoutsequence/{id}', [WorkoutSequenceController::class, 'destroy']);
 
-Route::get('workoutsequenceexercises/{idWorkoutSequence}', [WorkoutSequenceExercisesController::class, 'index']);
-Route::post('workoutsequenceexercise', [WorkoutSequenceExercisesController::class, 'store']);
-Route::post('workoutsequenceexercise/{id}', [WorkoutSequenceExercisesController::class, 'update']);
-Route::get('workoutsequenceexercise/{id}', [WorkoutSequenceExercisesController::class, 'show']);
-Route::delete('workoutsequenceexercise/{id}', [WorkoutSequenceExercisesController::class, 'destroy']);
+Route::get('workoutsequenceexercises/{idWorkoutSequence}', [WorkoutSequenceExerciseController::class, 'index']);
+Route::post('workoutsequenceexercise', [WorkoutSequenceExerciseController::class, 'store']);
+Route::post('workoutsequenceexercise/{id}', [WorkoutSequenceExerciseController::class, 'update']);
+Route::get('workoutsequenceexercise/{id}', [WorkoutSequenceExerciseController::class, 'show']);
+Route::delete('workoutsequenceexercise/{id}', [WorkoutSequenceExerciseController::class, 'destroy']);
